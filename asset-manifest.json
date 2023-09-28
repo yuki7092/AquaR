@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/AquaR/static/css/main.3be39191.css",
-    "main.js": "/AquaR/static/js/main.41c94417.js",
+    "main.js": "/AquaR/static/js/main.efbf691e.js",
     "static/media/ocean_bg0922.png": "/AquaR/static/media/ocean_bg0922.c51283229287bff554a8.png",
     "index.html": "/AquaR/index.html",
     "main.3be39191.css.map": "/AquaR/static/css/main.3be39191.css.map",
-    "main.41c94417.js.map": "/AquaR/static/js/main.41c94417.js.map"
+    "main.efbf691e.js.map": "/AquaR/static/js/main.efbf691e.js.map"
   },
   "entrypoints": [
     "static/css/main.3be39191.css",
-    "static/js/main.41c94417.js"
+    "static/js/main.efbf691e.js"
   ]
 }
