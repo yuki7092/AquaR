@@ -1,0 +1,1012 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.myBG {
+  width: 100vw;
+  height: 800px;
+  background-image: url("../../public/img/ocean_bg0922.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.blackBG {
+  background-color: rgb(0, 0, 0);
+}
+
+.mapContainer {
+  min-height: 800px;
+  position: relative;
+  color: white;
+
+  .map_h1 {
+    padding: 123px 0 50px 0;
+    font-weight: 900;
+    position: relative;
+    text-align: center;
+    text-shadow: 0em 0em 0.2em rgba(201, 194, 194, 0.775);
+  }
+}
+
+.map_all {
+  padding-bottom: 100px;
+  height: 2100px;
+  border-radius: 32px;
+  background-color: #18243436;
+  backdrop-filter: blur(8px);
+
+  svg {
+    width: 500px;
+    margin-left: 18px;
+    height: 400px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    text {
+      font-weight: 600;
+      pointer-events: none;
+
+      &:hover {
+        fill: #182434;
+      }
+    }
+
+    .area1FStroke {
+      stroke: white;
+      stroke-width: 1;
+    }
+
+    .area1F {
+      stroke-width: 1;
+      fill: rgb(24, 36, 52);
+      transition-duration: 0.3s;
+      &:hover {
+        stroke-width: 1;
+        fill: rgb(158, 220, 255);
+        stroke: rgb(255, 255, 255);
+      }
+
+      &:hover + text {
+        fill: rgb(24, 36, 52);
+      }
+    }
+
+    .active {
+      fill: rgb(158, 220, 255);
+      stroke: rgb(255, 255, 255);
+      stroke-width: 2;
+      z-index: 10;
+    }
+  }
+
+  #left-mapSvg {
+    margin-top: 90px;
+
+    .map-1F,
+    .map-2F,
+    .map-3F {
+      position: relative;
+
+      padding: 0 56px;
+    }
+
+    .map-2F,
+    .map-3F {
+      display: none;
+    }
+
+    // 電腦版
+    .floor-icons-1F {
+      .icons {
+        border-radius: 50%;
+        position: absolute;
+        opacity: 0.75;
+        background-color: rgba(255, 255, 255, 0);
+        width: 35px;
+      }
+
+      .wc1 {
+        top: 29px;
+        left: 115px;
+      }
+      .wc2 {
+        top: 320px;
+        left: 191px;
+      }
+      .wc3 {
+        top: 51px;
+        left: 458px;
+      }
+      .breast {
+        top: 29px;
+        left: 153px;
+      }
+      .breast2 {
+        top: 62px;
+        left: 491px;
+      }
+      .AED {
+        top: 218px;
+        left: 485px;
+      }
+      .ATM {
+        top: 321px;
+        left: 454px;
+      }
+      .elevator {
+        top: 109px;
+        left: 508px;
+      }
+
+      .exit {
+        top: 28px;
+        left: 426px;
+      }
+      .exit2 {
+        top: 225px;
+        left: 90px;
+      }
+      .info {
+        top: 288px;
+        left: 530px;
+      }
+      .restaurant {
+        top: 148px;
+        left: 518px;
+      }
+      .shop {
+        top: 298px;
+        left: 482px;
+      }
+      .escalator {
+        top: 160px;
+        left: 364px;
+      }
+    }
+
+    .floor-icons-2F {
+      .icons {
+        border-radius: 50%;
+        position: absolute;
+        opacity: 0.75;
+        background-color: rgba(255, 255, 255, 0);
+        width: 35px;
+      }
+
+      .wc1 {
+        top: 22px;
+        left: 340px;
+      }
+      .wc2 {
+        top: 252px;
+        left: 298px;
+      }
+
+      .breast {
+        top: 246px;
+        left: 262px;
+      }
+      .AED {
+        top: 109px;
+        left: 538px;
+      }
+
+      .exit {
+        top: 22px;
+        left: 118px;
+      }
+      .exit2 {
+        top: 213px;
+        left: 76px;
+      }
+
+      .elevator {
+        top: 109px;
+        left: 508px;
+      }
+
+      .escalator {
+        top: 160px;
+        left: 364px;
+      }
+    }
+
+    .floor-icons-3F {
+      .icons {
+        border-radius: 50%;
+        position: absolute;
+        opacity: 0.75;
+        background-color: rgba(255, 255, 255, 0);
+        width: 35px;
+      }
+
+      .wc1 {
+        top: 22px;
+        left: 322px;
+      }
+      .wc2 {
+        top: 210px;
+        left: 364px;
+      }
+      .wc3 {
+        top: 178px;
+        left: 76px;
+      }
+      .breast {
+        top: 210px;
+        left: 402px;
+      }
+
+      .AED {
+        top: 22px;
+        left: 284px;
+      }
+      .ATM {
+        top: 257px;
+        left: 284px;
+      }
+
+      .exit {
+        top: 22px;
+        left: 118px;
+      }
+      .exit2 {
+        top: 213px;
+        left: 76px;
+      }
+
+      .restaurant {
+        top: 257px;
+        left: 322px;
+      }
+
+      .elevator {
+        top: 109px;
+        left: 508px;
+      }
+
+      .escalator {
+        top: 160px;
+        left: 364px;
+      }
+    }
+  }
+
+  .introduction {
+    margin: 2vw 2vw 3vw 0;
+    height: 120px;
+  }
+
+  .areaImg {
+    width: 550px;
+    height: 250px;
+    margin-top: 20px;
+    border-radius: 32px;
+    object-fit: cover;
+  }
+
+  .icon {
+    img {
+      width: 80px;
+    }
+
+    .icon-first,
+    .icon-second {
+      margin: 0 50px;
+      display: flex;
+      justify-content: space-between;
+      .iconbutton {
+        cursor: pointer;
+      }
+
+      //大改-新按鈕區
+      .newIconButton {
+        position: relative;
+        width: 100px;
+        height: 40px;
+        border: 1px solid lightblue;
+        border-radius: 32px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lightblue;
+          border: 1px solid #182434;
+        }
+
+        &:hover .iconCircle {
+          display: none;
+        }
+        &:hover .iconButtonP,
+        &:hover .iconButtonP2 {
+          font-weight: 600;
+          transition: transform 1s;
+          letter-spacing: 1px;
+          color: #182434;
+          transform: translateX(-15px);
+        }
+
+        .iconCircle {
+          position: absolute;
+          width: 33px;
+          height: 33px;
+          background-color: #18243436;
+          border: 1px solid lightblue;
+          border-radius: 50%;
+          top: 7%;
+          left: 5%;
+
+          .newIcon {
+            margin-top: 3px;
+            margin-left: 7px;
+            width: 18px;
+          }
+        }
+        .iconButtonP {
+          position: absolute;
+
+          left: 42%;
+          top: 15%;
+        }
+        .iconButtonP2 {
+          position: absolute;
+
+          left: 50%;
+          top: 15%;
+        }
+      }
+    }
+  }
+}
+
+.floor-select {
+  display: none;
+}
+
+.floorAll {
+  margin: 0 33px;
+  height: 550px;
+  .nowFloor {
+    margin-top: 30px;
+  }
+}
+
+.area-button {
+  font-weight: 300;
+  border-radius: 80%;
+  color: white;
+  width: 120px;
+  height: 120px;
+
+  &:hover {
+    box-shadow: 0px 2px 8px 0px #84e4f9, 0px -3px 8px 0px #84e4f9;
+    background-color: #e0f8ff;
+    color: #182434;
+    font-weight: 500;
+  }
+}
+
+// RWD
+@media (max-width: 1400px) {
+  .map_all {
+    .floor-icons-1F {
+      display: none;
+    }
+  }
+  svg {
+    max-width: 500px;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  svg {
+    max-width: 420px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  .icons {
+    width: 50px;
+  }
+
+  .area-button {
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  .floor {
+    margin-left: -50px;
+  }
+  .area-buttons {
+    width: 360px;
+    margin-right: 0;
+  }
+
+  .map_all {
+    svg {
+      max-width: 280px;
+      padding-bottom: 180px;
+      margin-left: 50px;
+    }
+  }
+
+  .icons {
+    width: 50px;
+  }
+
+  .area-button {
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+  }
+
+  .map_all {
+    .introduction {
+      margin: 0 24px;
+      width: 330px;
+    }
+  }
+
+  .icon {
+    margin-top: 20px;
+    margin-left: -29vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    h1 {
+      text-align: center;
+      padding: 100px 0 20px 0;
+      font-weight: 900;
+    }
+  }
+
+  .floor {
+    margin: auto;
+  }
+
+  .map_all {
+    padding: 30px 20px 0 20px;
+    margin: 0 5px;
+
+    // 電腦版
+    .computerSvg {
+      display: none;
+
+      text {
+        font-weight: 600;
+        pointer-events: none;
+
+        &:hover {
+          fill: #182434;
+        }
+      }
+
+      .area1FStroke {
+        stroke: white;
+        stroke-width: 1;
+      }
+
+      .area1F {
+        fill: rgb(24, 36, 52);
+        transition-duration: 0.3s;
+        &:hover {
+          stroke-width: 1;
+          fill: rgb(158, 220, 255);
+          stroke: rgb(255, 255, 255);
+        }
+
+        &:hover + text {
+          fill: rgb(24, 36, 52);
+        }
+      }
+
+      .active {
+        fill: rgb(158, 220, 255);
+        z-index: 10;
+      }
+    }
+
+    .icon {
+      display: none;
+    }
+
+    //可能可以刪除
+    #left-mapSvg {
+      margin-top: 0px;
+
+      .map-1F,
+      .map-2F,
+      .map-3F {
+        display: none;
+        transition: 1s;
+      }
+
+      // 電腦版
+      .floor-icons-1F {
+        .icons {
+          border-radius: 50%;
+          position: absolute;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 40px;
+        }
+
+        .wc1 {
+          top: 10px;
+          left: 115px;
+        }
+        .wc2 {
+          top: 335px;
+          left: 203px;
+        }
+        .wc3 {
+          top: 35px;
+          left: 497px;
+        }
+        .breast {
+          top: 10px;
+          left: 155px;
+        }
+        .breast2 {
+          top: 50px;
+          left: 533px;
+          // top: 144px; 94
+          // left: 543px;
+        }
+        .AED {
+          top: 220px;
+          left: 520px;
+        }
+        .ATM {
+          top: 335px;
+          left: 485px;
+        }
+        .elevator {
+          top: 143px;
+          left: 560px;
+        }
+
+        .exit {
+          top: 10px;
+          left: 470px;
+        }
+        .exit2 {
+          top: 225px;
+          left: 90px;
+        }
+        .info {
+          top: 295px;
+          left: 578px;
+        }
+        .restaurant {
+          top: 105px;
+          left: 548px;
+        }
+        .shop {
+          top: 310px;
+          left: 519px;
+        }
+        .escalator {
+          top: 165px;
+          left: 390px;
+        }
+      }
+
+      .floor-icons-2F {
+        .icons {
+          border-radius: 50%;
+          position: absolute;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 40px;
+        }
+
+        .wc1 {
+          top: 5px;
+          left: 360px;
+        }
+        .wc2 {
+          top: 255px;
+          left: 318px;
+        }
+
+        .breast {
+          top: 253px;
+          left: 280px;
+        }
+
+        .AED {
+          top: 105px;
+          left: 580px;
+        }
+
+        .elevator {
+          top: 143px;
+          left: 560px;
+        }
+
+        .exit {
+          top: 5px;
+          left: 120px;
+        }
+        .exit2 {
+          top: 218px;
+          left: 73px;
+        }
+
+        .escalator {
+          top: 165px;
+          left: 390px;
+        }
+      }
+
+      .floor-icons-3F {
+        .icons {
+          border-radius: 50%;
+          position: absolute;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 40px;
+        }
+
+        .breast {
+          top: 10px;
+          left: 155px;
+        }
+        .breast2 {
+          top: 50px;
+          left: 533px;
+        }
+        .AED {
+          top: 220px;
+          left: 520px;
+        }
+        .ATM {
+          top: 335px;
+          left: 485px;
+        }
+        .elevator {
+          top: 143px;
+          left: 560px;
+        }
+
+        .exit {
+          top: 10px;
+          left: 470px;
+        }
+        .exit2 {
+          top: 225px;
+          left: 90px;
+        }
+        .info {
+          top: 295px;
+          left: 578px;
+        }
+        .restaurant {
+          top: 105px;
+          left: 548px;
+        }
+        .shop {
+          top: 310px;
+          left: 519px;
+        }
+        .escalator {
+          top: 165px;
+          left: 390px;
+        }
+      }
+    }
+
+    .introduction {
+      margin: 3vw 2vw 3vw 0;
+      height: 120px;
+    }
+
+    .areaImg {
+      width: 550px;
+      height: 250px;
+      margin-top: 20px;
+      border-radius: 32px;
+
+      object-fit: cover;
+    }
+
+    .icon {
+      img {
+        width: 80px;
+      }
+
+      .icon-first,
+      .icon-second {
+        margin: 0 50px;
+        display: flex;
+        justify-content: space-between;
+        .iconbutton {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .floorAll {
+    display: none;
+  }
+
+  //右側二樓三樓
+
+  .area-button {
+    display: none;
+  }
+
+  .floor {
+    display: none;
+  }
+
+  .icon-computer {
+    display: none;
+  }
+
+  .map_all {
+    .introduction {
+      margin: 0;
+
+      width: 100%;
+    }
+  }
+
+  .floor-icons-1F-phone {
+    display: flex;
+    .phone-icons {
+      border-radius: 50%;
+      opacity: 0.75;
+      background-color: rgba(255, 255, 255, 0);
+      width: 100px;
+    }
+
+    .phone-icons {
+      max-width: 7vw;
+      border-radius: 50%;
+      position: absolute;
+      opacity: 0.75;
+      background-color: rgba(255, 255, 255, 0);
+      width: 40px;
+    }
+
+    .phone-wc1 {
+      top: 22%;
+      left: 29%;
+    }
+    .phone-wc2 {
+      top: 39.5%;
+      left: 36%;
+    }
+    .phone-wc3 {
+      top: 28.5%;
+      left: 63%;
+    }
+    .phone-breast {
+      top: 23%;
+      left: 35%;
+    }
+    .phone-breast2 {
+      top: 28.5%;
+      left: 69%;
+    }
+    .phone-AED {
+      top: 52%;
+      left: 59%;
+    }
+    .phone-ATM {
+      top: 44.5%;
+      left: 81%;
+    }
+    .phone-elevator {
+      top: 32%;
+      left: 80%;
+    }
+
+    .phone-exit {
+      top: 29%;
+      left: 56%;
+    }
+    .phone-exit2 {
+      top: 48%;
+      left: 20.5%;
+    }
+    .phone-info {
+      top: 48%;
+      left: 76%;
+    }
+    .phone-restaurant {
+      top: 37%;
+      left: 86%;
+    }
+    .phone-shop {
+      top: 29.5%;
+      left: 76%;
+    }
+    .phone-escalator {
+      top: 40%;
+      left: 75%;
+    }
+  }
+
+  .floor-select {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .floor-icons-1F-phone {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  //手機版
+  .map_all {
+    padding: 30px 20px 0 20px;
+    height: 900px;
+
+    .map-phone {
+      .map-2F-phone,
+      .map-3F-phone {
+        display: none;
+      }
+
+      .floor-icons-1F-phone {
+        .icons {
+          border-radius: 50%;
+          position: absolute;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 25px;
+        }
+
+        .wc1 {
+          top: 215px;
+          left: 58px;
+        }
+        .wc2 {
+          top: 228px;
+          left: 286px;
+        }
+        .wc3 {
+          top: 407px;
+          left: 108px;
+        }
+        .breast {
+          top: 215px;
+          left: 83px;
+        }
+        .breast2 {
+          top: 235px;
+          left: 307px;
+        }
+        .AED {
+          top: 340px;
+          left: 303px;
+        }
+        .ATM {
+          top: 407px;
+          left: 280px;
+        }
+        .elevator {
+          top: 293px;
+          left: 323px;
+        }
+
+        .exit {
+          top: 214px;
+          left: 270px;
+        }
+        .exit2 {
+          top: 346px;
+          left: 41px;
+        }
+        .info {
+          top: 385px;
+          left: 334px;
+        }
+        .restaurant {
+          top: 268px;
+          left: 318px;
+        }
+        .shop {
+          top: 392px;
+          left: 300px;
+        }
+        .escalator {
+          top: 293px;
+          left: 228px;
+        }
+      }
+
+      .phoneSvg {
+        height: 300px;
+        max-width: 330px;
+        margin: 0 auto;
+        padding: 0;
+
+        .areaStroke {
+          font-size: 24;
+        }
+      }
+    }
+
+    .iconbutton-phone {
+      .icon-first {
+        display: flex;
+
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* 隱藏滾動條 */
+        -ms-overflow-style: none;
+        /* 隱藏滾動條 */
+        gap: 15px;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .newIconButton {
+          position: relative;
+          padding: 35px;
+          width: 50px;
+          height: 50px;
+          border: 1px solid lightblue;
+          border-radius: 50%;
+
+          .iconCircle {
+            position: absolute;
+
+            top: 14%;
+            left: 35%;
+            img {
+              width: 22px;
+              background-color: rgba(0, 0, 0, 0);
+            }
+          }
+          .iconButtonP {
+            position: absolute;
+            font-size: 16px;
+            left: 17%;
+            top: 52%;
+          }
+          .iconButtonP2 {
+            position: absolute;
+            font-size: 16px;
+
+            left: 28%;
+            top: 52%;
+          }
+        }
+      }
+    }
+    .areaImg {
+      width: 316px;
+      height: 143.6px;
+      margin-top: 20px;
+      border-radius: 32px;
+
+      object-fit: cover;
+    }
+    .introduction {
+      margin: 30px 0px 0 0px;
+      height: 120px;
+    }
+  }
+}

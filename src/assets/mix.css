@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+body .myBg {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body #root {
+  background-color: rgb(0, 7, 6);
+}
+
+.container {
+  color: white;
+}
+.container h1 {
+  position: relative;
+  margin: 123px 0 50px 0;
+  font-weight: 900;
+}
+
+.map_all {
+  display: flex;
+  position: relative;
+  border-radius: 32px;
+  background-color: rgba(0, 0, 0, 0.4392156863);
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
+}
+.map_all svg {
+  width: 550px;
+  margin-left: 70px;
+  height: 400px;
+}
+.map_all svg:hover {
+  cursor: pointer;
+}
+.map_all svg text {
+  fill: black;
+  font-weight: 600;
+  z-index: 10;
+  pointer-events: none;
+}
+.map_all svg .area1FStroke {
+  stroke: black;
+  stroke-width: 3;
+}
+.map_all svg .area1F {
+  fill: rgb(192, 232, 245);
+  transition-duration: 0.3s;
+}
+.map_all svg .area1F:hover {
+  stroke-width: 3;
+  fill: rgb(37, 248, 252);
+  stroke-width: 3;
+  z-index: 10;
+}
+.map_all svg .active {
+  fill: rgb(37, 248, 252);
+}
+.map_all .changeColorToHover {
+  fill: aliceblue;
+}
+.map_all .floor-icons .icons {
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.75;
+  background-color: rgba(255, 255, 255, 0);
+  width: 40px;
+}
+.map_all .floor-icons .wc1 {
+  top: 105px;
+  left: 125px;
+}
+.map_all .floor-icons .wc2 {
+  top: 427px;
+  left: 213px;
+}
+.map_all .floor-icons .wc3 {
+  top: 128px;
+  left: 507px;
+}
+.map_all .floor-icons .breast {
+  top: 105px;
+  left: 165px;
+}
+.map_all .floor-icons .breast2 {
+  top: 144px;
+  left: 543px;
+}
+.map_all .floor-icons .AED {
+  top: 310px;
+  left: 532px;
+}
+.map_all .floor-icons .ATM {
+  top: 430px;
+  left: 495px;
+}
+.map_all .floor-icons .elevator {
+  top: 238px;
+  left: 570px;
+}
+.map_all .floor-icons .exit {
+  top: 105px;
+  left: 480px;
+}
+.map_all .floor-icons .exit2 {
+  top: 330px;
+  left: 100px;
+}
+.map_all .floor-icons .info {
+  top: 390px;
+  left: 588px;
+}
+.map_all .floor-icons .restaurant {
+  top: 200px;
+  left: 558px;
+}
+.map_all .floor-icons .shop {
+  top: 405px;
+  left: 527px;
+}
+.map_all .floor-icons .escalator {
+  top: 250px;
+  left: 400px;
+}
+.map_all .introduction {
+  margin: 3vw 2vw 3vw 0;
+  height: 120px;
+}
+.map_all .icon img {
+  width: 80px;
+}
+.map_all .icon .icon-first,
+.map_all .icon .icon-second {
+  display: flex;
+  justify-content: space-between;
+}
+.map_all .icon .icon-first .iconbutton,
+.map_all .icon .icon-second .iconbutton {
+  cursor: pointer;
+}
+
+.floor-select {
+  display: none;
+}
+
+.area-buttons {
+  font-weight: bold;
+  width: 90px;
+  height: 90px;
+}
+.area-buttons:hover {
+  box-shadow: 0 0 0.1rem #70dfdf, 0 0 0.5rem #70dfdf, 0 0 1rem #70dfdf, 0 0 1rem #375a4c, 0 0 2.5rem #70dfdf, inset 0 0 1rem #70dfdf, inset 0 0 0.5rem #70dfdf;
+}
+
+@media (max-width: 1400px) {
+  .map_all .floor-icons {
+    display: none;
+  }
+  svg {
+    max-width: 500px;
+    margin-left: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  svg {
+    max-width: 420px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  .icons {
+    width: 50px;
+  }
+  .area-buttons {
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 992px) {
+  .floor {
+    margin-left: -50px;
+  }
+  .area-button {
+    width: 360px;
+    margin-right: 0;
+  }
+  .map_all svg {
+    max-width: 280px;
+    padding-bottom: 180px;
+    margin-left: 50px;
+  }
+  .icons {
+    width: 50px;
+  }
+  .area-buttons {
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+  }
+  .map_all .introduction {
+    margin: 0 24px;
+    width: 330px;
+  }
+  .icon {
+    margin-top: 20px;
+    margin-left: -29vw;
+  }
+}
+@media (max-width: 768px) {
+  .container h1 {
+    text-align: center;
+    margin: 100px 0 20px 0;
+    font-weight: 900;
+  }
+  .floor {
+    margin: auto;
+  }
+  .map_all {
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    padding: 30px 20px 0 20px;
+  }
+  .map_all svg {
+    height: 300px;
+    max-width: 450px;
+    margin: 40px 0 0 20px;
+    padding: 0;
+  }
+  .map_all .icon {
+    display: none;
+  }
+  .floor {
+    margin: 0;
+    padding: 0;
+  }
+  .icon-computer {
+    display: none;
+  }
+  .map_all .introduction {
+    margin: 0;
+    width: 100%;
+  }
+  .floor-icons-phone {
+    display: flex;
+  }
+  .floor-icons-phone .phone-icons {
+    border-radius: 50%;
+    opacity: 0.75;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100px;
+  }
+  .floor-icons-phone .phone-icons {
+    max-width: 7vw;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.75;
+    background-color: rgba(255, 255, 255, 0);
+    width: 40px;
+  }
+  .floor-icons-phone .phone-wc1 {
+    top: 22%;
+    left: 29%;
+  }
+  .floor-icons-phone .phone-wc2 {
+    top: 39.5%;
+    left: 36%;
+  }
+  .floor-icons-phone .phone-wc3 {
+    top: 28.5%;
+    left: 63%;
+  }
+  .floor-icons-phone .phone-breast {
+    top: 23%;
+    left: 35%;
+  }
+  .floor-icons-phone .phone-breast2 {
+    top: 28.5%;
+    left: 69%;
+  }
+  .floor-icons-phone .phone-AED {
+    top: 52%;
+    left: 59%;
+  }
+  .floor-icons-phone .phone-ATM {
+    top: 44.5%;
+    left: 81%;
+  }
+  .floor-icons-phone .phone-elevator {
+    top: 32%;
+    left: 80%;
+  }
+  .floor-icons-phone .phone-exit {
+    top: 29%;
+    left: 56%;
+  }
+  .floor-icons-phone .phone-exit2 {
+    top: 48%;
+    left: 20.5%;
+  }
+  .floor-icons-phone .phone-info {
+    top: 48%;
+    left: 76%;
+  }
+  .floor-icons-phone .phone-restaurant {
+    top: 37%;
+    left: 86%;
+  }
+  .floor-icons-phone .phone-shop {
+    top: 29.5%;
+    left: 76%;
+  }
+  .floor-icons-phone .phone-escalator {
+    top: 40%;
+    left: 75%;
+  }
+  .floor-select {
+    display: block;
+  }
+  .floor-button,
+  .area-button,
+  h2 {
+    display: none;
+  }
+  .icon {
+    margin: 0;
+  }
+}
+@media (min-width: 768px) {
+  .floor-icons-phone {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .map_all {
+    padding: 30px 20px 0 20px;
+  }
+  .map_all svg {
+    height: 300px;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}/*# sourceMappingURL=mix.css.map */
