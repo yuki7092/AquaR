@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import HeaderForPages from "./components/HeaderForPages";
 import MouseLight from "./components/MouseLight";
+import ScrollTop from "./components/ScrollTop";
 
 import "./assets/all.scss";
 
@@ -21,6 +22,7 @@ function App() {
         link5="明星動物"
       />
       <MouseLight />
+      <ScrollTop />
     </div>
   );
 }
