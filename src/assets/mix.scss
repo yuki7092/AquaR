@@ -6,7 +6,7 @@
 }
 
 .myBG {
-  width: 100vw;
+  width: 100%;
   height: 800px;
   background-image: url("../../public/img/ocean_bg0922.png");
   background-repeat: no-repeat;
@@ -17,10 +17,12 @@
 }
 
 .blackBG {
+  // width: 100vw;
   background-color: rgb(0, 0, 0);
 }
 
 .mapContainer {
+  width: 100vw;
   min-height: 800px;
   position: relative;
   color: white;
@@ -536,6 +538,7 @@
       // 電腦版
       .floor-icons-1F {
         .icons {
+          pointer-events: none;
           border-radius: 50%;
           position: absolute;
           opacity: 0.75;
@@ -606,6 +609,7 @@
 
       .floor-icons-2F {
         .icons {
+          pointer-events: none;
           border-radius: 50%;
           position: absolute;
           opacity: 0.75;
@@ -654,6 +658,7 @@
 
       .floor-icons-3F {
         .icons {
+          pointer-events: none;
           border-radius: 50%;
           position: absolute;
           opacity: 0.75;
@@ -860,13 +865,138 @@
     height: 900px;
 
     .map-phone {
+      position: relative;
       .map-2F-phone,
       .map-3F-phone {
         display: none;
       }
+      .phoneSvg {
+        height: 300px;
+        max-width: 317px;
+        margin: 0 auto;
+        padding: 0;
 
+        .areaStroke {
+          font-size: 24;
+        }
+      }
       .floor-icons-1F-phone {
         .icons {
+          position: absolute;
+          border-radius: 50%;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 25px;
+        }
+
+        .wc1 {
+          top: 42px;
+          left: 26px;
+        }
+        .wc2 {
+          top: 55px;
+          left: 248px;
+        }
+        .wc3 {
+          top: 227px;
+          left: 76px;
+        }
+        .breast {
+          top: 42px;
+          left: 53px;
+        }
+        .breast2 {
+          top: 67px;
+          left: 267px;
+        }
+        .AED {
+          top: 163px;
+          left: 258px;
+        }
+        .ATM {
+          top: 227px;
+          left: 239px;
+        }
+        .elevator {
+          top: 118px;
+          left: 281px;
+        }
+
+        .exit {
+          top: 168px;
+          left: 11px;
+        }
+        .exit2 {
+          top: 42px;
+          left: 229px;
+        }
+        .info {
+          top: 205px;
+          left: 290px;
+        }
+        .restaurant {
+          top: 93px;
+          left: 273px;
+        }
+        .shop {
+          top: 212px;
+          left: 259px;
+        }
+        .escalator {
+          top: 118px;
+          left: 188px;
+        }
+      }
+      .floor-icons-2F-phone {
+        .icons {
+          position: absolute;
+          border-radius: 50%;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 25px;
+        }
+
+        .wc1 {
+          top: 42px;
+          left: 170px;
+        }
+        .wc2 {
+          top: 181px;
+          left: 141px;
+        }
+
+        .breast {
+          top: 177px;
+          left: 115px;
+        }
+
+        .AED {
+          top: 118px;
+          left: 255px;
+        }
+
+        .elevator {
+          top: 118px;
+          left: 281px;
+        }
+
+        .exit {
+          top: 37px;
+          left: 27px;
+        }
+        .exit2 {
+          top: 160px;
+          left: 3px;
+        }
+
+        .escalator {
+          top: 118px;
+          left: 188px;
+        }
+      }
+      .floor-icons-3F-phone {
+        .icons {
+          position: absolute;
           border-radius: 50%;
           position: absolute;
           opacity: 0.75;
@@ -875,72 +1005,52 @@
         }
 
         .wc1 {
-          top: 215px;
-          left: 58px;
+          top: 37px;
+          left: 154px;
         }
         .wc2 {
-          top: 228px;
-          left: 286px;
+          top: 136px;
+          left: 3px;
         }
         .wc3 {
-          top: 407px;
-          left: 108px;
+          top: 155px;
+          left: 182px;
         }
         .breast {
-          top: 215px;
-          left: 83px;
+          top: 155px;
+          left: 208px;
         }
-        .breast2 {
-          top: 235px;
-          left: 307px;
-        }
+
         .AED {
-          top: 340px;
-          left: 303px;
+          top: 118px;
+          left: 255px;
         }
         .ATM {
-          top: 407px;
-          left: 280px;
+          top: 185px;
+          left: 129px;
         }
         .elevator {
-          top: 293px;
-          left: 323px;
+          top: 118px;
+          left: 281px;
         }
 
         .exit {
-          top: 214px;
-          left: 270px;
+          top: 37px;
+          left: 27px;
         }
         .exit2 {
-          top: 346px;
-          left: 41px;
+          top: 162px;
+          left: 3px;
         }
-        .info {
-          top: 385px;
-          left: 334px;
-        }
+
         .restaurant {
-          top: 268px;
-          left: 318px;
+          top: 185px;
+          left: 155px;
         }
-        .shop {
-          top: 392px;
-          left: 300px;
-        }
+
         .escalator {
-          top: 293px;
-          left: 228px;
-        }
-      }
-
-      .phoneSvg {
-        height: 300px;
-        max-width: 330px;
-        margin: 0 auto;
-        padding: 0;
-
-        .areaStroke {
-          font-size: 24;
+          top: 92px;
+          left: 188px;
         }
       }
     }
@@ -1005,7 +1115,302 @@
       object-fit: cover;
     }
     .introduction {
+      max-width: 317px;
       margin: 30px 0px 0 0px;
+      height: 120px;
+    }
+  }
+}
+@media (max-width: 400px) {
+  //手機版
+  .map_all {
+    padding: 30px 20px 0 20px;
+    height: 900px;
+
+    .map-phone {
+      position: relative;
+      .map-2F-phone,
+      .map-3F-phone {
+        display: none;
+      }
+      .phoneSvg {
+        height: 300px;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 0;
+
+        .areaStroke {
+          font-size: 24;
+        }
+      }
+      .floor-icons-1F-phone {
+        .icons {
+          position: absolute;
+          border-radius: 50%;
+          position: absolute;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 25px;
+        }
+
+        .wc1 {
+          top: 49px;
+          left: 26px;
+        }
+        .wc2 {
+          top: 61px;
+          left: 231px;
+        }
+        .wc3 {
+          top: 223px;
+          left: 73px;
+        }
+        .breast {
+          top: 49px;
+          left: 53px;
+        }
+        .breast2 {
+          top: 70px;
+          left: 252px;
+        }
+        .AED {
+          top: 163px;
+          left: 244px;
+        }
+        .ATM {
+          top: 219px;
+          left: 226px;
+        }
+        .elevator {
+          top: 119px;
+          left: 264px;
+        }
+
+        .exit {
+          top: 170px;
+          left: 9px;
+        }
+        .exit2 {
+          top: 47px;
+          left: 211px;
+        }
+        .info {
+          top: 202px;
+          left: 274px;
+        }
+        .restaurant {
+          top: 95px;
+          left: 257px;
+        }
+        .shop {
+          top: 207px;
+          left: 249px;
+        }
+        .escalator {
+          top: 123px;
+          left: 175px;
+        }
+      }
+      .floor-icons-2F-phone {
+        .icons {
+          position: absolute;
+          border-radius: 50%;
+          position: absolute;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 25px;
+        }
+
+        .wc1 {
+          top: 49px;
+          left: 26px;
+        }
+        .wc2 {
+          top: 61px;
+          left: 231px;
+        }
+        .wc3 {
+          top: 223px;
+          left: 73px;
+        }
+        .breast {
+          top: 49px;
+          left: 53px;
+        }
+        .breast2 {
+          top: 70px;
+          left: 252px;
+        }
+        .AED {
+          top: 163px;
+          left: 244px;
+        }
+        .ATM {
+          top: 219px;
+          left: 226px;
+        }
+        .elevator {
+          top: 119px;
+          left: 264px;
+        }
+
+        .exit {
+          top: 170px;
+          left: 9px;
+        }
+        .exit2 {
+          top: 47px;
+          left: 211px;
+        }
+        .info {
+          top: 202px;
+          left: 274px;
+        }
+        .restaurant {
+          top: 95px;
+          left: 257px;
+        }
+        .shop {
+          top: 207px;
+          left: 249px;
+        }
+        .escalator {
+          top: 123px;
+          left: 175px;
+        }
+      }
+      .floor-icons-3F-phone {
+        .icons {
+          position: absolute;
+          border-radius: 50%;
+          position: absolute;
+          opacity: 0.75;
+          background-color: rgba(255, 255, 255, 0);
+          width: 25px;
+        }
+
+        .wc1 {
+          top: 49px;
+          left: 26px;
+        }
+        .wc2 {
+          top: 61px;
+          left: 231px;
+        }
+        .wc3 {
+          top: 223px;
+          left: 73px;
+        }
+        .breast {
+          top: 49px;
+          left: 53px;
+        }
+        .breast2 {
+          top: 70px;
+          left: 252px;
+        }
+        .AED {
+          top: 163px;
+          left: 244px;
+        }
+        .ATM {
+          top: 219px;
+          left: 226px;
+        }
+        .elevator {
+          top: 119px;
+          left: 264px;
+        }
+
+        .exit {
+          top: 170px;
+          left: 9px;
+        }
+        .exit2 {
+          top: 47px;
+          left: 211px;
+        }
+        .info {
+          top: 202px;
+          left: 274px;
+        }
+        .restaurant {
+          top: 95px;
+          left: 257px;
+        }
+        .shop {
+          top: 207px;
+          left: 249px;
+        }
+        .escalator {
+          top: 123px;
+          left: 175px;
+        }
+      }
+    }
+
+    .iconbutton-phone {
+      .icon-first {
+        display: flex;
+
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* 隱藏滾動條 */
+        -ms-overflow-style: none;
+        /* 隱藏滾動條 */
+        gap: 15px;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .newIconButton {
+          position: relative;
+          padding: 35px;
+          width: 50px;
+          height: 50px;
+          border: 1px solid lightblue;
+          border-radius: 50%;
+
+          .iconCircle {
+            position: absolute;
+
+            top: 14%;
+            left: 35%;
+            img {
+              width: 22px;
+              background-color: rgba(0, 0, 0, 0);
+            }
+          }
+          .iconButtonP {
+            position: absolute;
+            font-size: 16px;
+            left: 17%;
+            top: 52%;
+          }
+          .iconButtonP2 {
+            position: absolute;
+            font-size: 16px;
+
+            left: 28%;
+            top: 52%;
+          }
+        }
+      }
+    }
+    .areaImg {
+      width: 277px;
+      height: 143.6px;
+      margin-top: 20px;
+      border-radius: 32px;
+
+      object-fit: cover;
+    }
+    .introduction {
+      margin: 30px 0px 0 0px;
+      width: 277px;
       height: 120px;
     }
   }

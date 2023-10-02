@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 
 const Mix = () => {
-  const [areaImgPhone, setAreaImgPhone] = useState("./img/area/1-1Garden.jpg");
-  const [areaImg1F, setAreaImg1F] = useState("./img/area/1-1Garden.jpg");
-  const [areaImg2F, setAreaImg2F] = useState("./img/area/2-1jelly.jpg");
-  const [areaImg3F, setAreaImg3F] = useState("./img/area/3-1coral.jpg");
+  const [areaImgPhone, setAreaImgPhone] = useState("img/area/1-1Garden.jpg");
+  const [areaImg1F, setAreaImg1F] = useState("img/area/1-1Garden.jpg");
+  const [areaImg2F, setAreaImg2F] = useState("img/area/2-1jelly.jpg");
+  const [areaImg3F, setAreaImg3F] = useState("img/area/3-1coral.jpg");
 
   const [area1, setArea1] = useState("漫步花園");
   const [area2, setArea2] = useState("淺海迴廊");
@@ -110,233 +110,194 @@ const Mix = () => {
 
   // ? ----- 樓層區域按鈕 -----
   const areaOne = () => {
-    setAreaImg1F("./img/area/1-1Garden.jpg");
+    setAreaImg1F("img/area/1-1Garden.jpg");
+    setAreaImgPhone("img/area/1-1Garden.jpg");
 
     (function () {
       handleButtonClick(1); // 區塊的文字
       handleBlockClick(1); //區塊點選時區塊按鈕發光
     })();
-    if (area1 === "漫步花園") {
-      setContent(
-        <span>
-          漫步花園作為館內第一個展區，引您進入美妙的海中世界，五彩斑斕的海生植物在水中舞動，猶如在風中搖曳的花兒，魚群如花海中的精靈般，邀請您共同在海中花園優游。
-        </span>
-      );
-      setAreaImgPhone("./img/area/1-1Garden.jpg");
-      setAreaImg1F("./img/area/1-1Garden.jpg");
+    setContent(
+      <span>
+        漫步花園作為館內第一個展區，引您進入美妙的海中世界，五彩斑斕的海生植物在水中舞動，猶如在風中搖曳的花兒，魚群如花海中的精靈般，邀請您共同在海中花園優游。
+      </span>
+    );
+    setContentPhone(
+      <span>
+        漫步花園作為館內第一個展區，引您進入美妙的海中世界，五彩斑斕的海生植物在水中舞動，猶如在風中搖曳的花兒，魚群如花海中的精靈般，邀請您共同在海中花園優游。
+      </span>
+    );
+    document.querySelector("#area").value = "漫步花園";
 
-      setContentPhone(
-        <span>
-          漫步花園作為館內第一個展區，引您進入美妙的海中世界，五彩斑斕的海生植物在水中舞動，猶如在風中搖曳的花兒，魚群如花海中的精靈般，邀請您共同在海中花園優游。
-        </span>
-      );
-      document.querySelector("#area").value = "漫步花園";
-    } else if (area1 === "水母幻境") {
-      setAreaImgPhone("./img/area/2-1jelly.jpg");
-      setContent(
-        <span>
-          各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
-        </span>
-      );
-      setContentPhone(
-        <span>
-          各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
-        </span>
-      );
-      document.querySelector("#area").value = "水母幻境";
-    } else {
-      setAreaImgPhone("./img/area/3-1coral.jpg");
+    // if (area1 === "漫步花園") {
+    // } else if (area1 === "水母幻境") {
+    //   setAreaImgPhone("img/area/2-1jelly.jpg");
+    //   setContent(
+    //     <span>
+    //       各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
+    //     </span>
+    //   );
+    //   setContentPhone(
+    //     <span>
+    //       各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
+    //     </span>
+    //   );
+    //   document.querySelector("#area").value = "水母幻境";
+    // } else {
+    //   setAreaImgPhone("img/area/3-1coral.jpg");
 
-      setContentPhone(
-        <span>
-          這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
-        </span>
-      );
-      setContent(
-        <span>
-          這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
-        </span>
-      );
-      document.querySelector("#area").value = "珊瑚寶藏";
-    }
+    //   setContentPhone(
+    //     <span>
+    //       這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
+    //     </span>
+    //   );
+    //   setContent(
+    //     <span>
+    //       這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
+    //     </span>
+    //   );
+    //   document.querySelector("#area").value = "珊瑚寶藏";
+    // }
   };
 
   const areaSecond = () => {
-    setAreaImg1F("./img/area/1-2cloister.jpg");
+    setAreaImg1F("img/area/1-2cloister.jpg");
+    setAreaImgPhone("img/area/1-2cloister.jpg");
+    setContentPhone(
+      <span>
+        身處在微光交織的淺海迴廊中，您將可以近距離欣賞各種廣為人知的明星海洋生物，出現在電影裡的各種熱帶魚、療癒人心的微笑魟魚，造型獨特的獅子魚等等，都在這裡等您感受他們的魅力。
+      </span>
+    );
+    setContent(
+      <span>
+        身處在微光交織的淺海迴廊中，您將可以近距離欣賞各種廣為人知的明星海洋生物，出現在電影裡的各種熱帶魚、療癒人心的微笑魟魚，造型獨特的獅子魚等等，都在這裡等您感受他們的魅力。
+      </span>
+    );
+    document.querySelector("#area").value = "淺海迴廊";
 
     (function () {
       handleButtonClick(2);
       handleBlockClick(2);
     })();
-    if (area2 === "淺海迴廊") {
-      setAreaImgPhone("./img/area/1-2cloister.jpg");
-      setContentPhone(
-        <span>
-          身處在微光交織的淺海迴廊中，您將可以近距離欣賞各種廣為人知的明星海洋生物，出現在電影裡的各種熱帶魚、療癒人心的微笑魟魚，造型獨特的獅子魚等等，都在這裡等您感受他們的魅力。
-        </span>
-      );
-      setContent(
-        <span>
-          身處在微光交織的淺海迴廊中，您將可以近距離欣賞各種廣為人知的明星海洋生物，出現在電影裡的各種熱帶魚、療癒人心的微笑魟魚，造型獨特的獅子魚等等，都在這裡等您感受他們的魅力。
-        </span>
-      );
-      document.querySelector("#area").value = "淺海迴廊";
-    } else if (area2 === "星空隧道") {
-      setContentPhone(
-        <span>
-          您是否覺得如果能在海底自在穿梭該有多好？星空隧道將滿足您的願望，
-          在這裡眼前是一片舒心靜謐的藍，魚兒如夜空中繁星點點，又如流星般劃過眼前，
-          或許踏入這裡，能實現您更多心願。
-        </span>
-      );
-      setContent(
-        <span>
-          您是否覺得如果能在海底自在穿梭該有多好？星空隧道將滿足您的願望，
-          在這裡眼前是一片舒心靜謐的藍，魚兒如夜空中繁星點點，又如流星般劃過眼前，
-          或許踏入這裡，能實現您更多心願。
-        </span>
-      );
-      document.querySelector("#area").value = "星空隧道";
-    } else {
-      setContentPhone(<span>　　深海搖籃的文案????</span>);
-      setContent(<span>　　深海搖籃的文案????</span>);
-      document.querySelector("#area").value = "深海搖籃";
-    }
+    // if (area2 === "淺海迴廊") {
+
+    //
+    // } else if (area2 === "星空隧道") {
+    //   setContentPhone(
+    //     <span>
+    //       您是否覺得如果能在海底自在穿梭該有多好？星空隧道將滿足您的願望，
+    //       在這裡眼前是一片舒心靜謐的藍，魚兒如夜空中繁星點點，又如流星般劃過眼前，
+    //       或許踏入這裡，能實現您更多心願。
+    //     </span>
+    //   );
+    //   setContent(
+    //     <span>
+    //       您是否覺得如果能在海底自在穿梭該有多好？星空隧道將滿足您的願望，
+    //       在這裡眼前是一片舒心靜謐的藍，魚兒如夜空中繁星點點，又如流星般劃過眼前，
+    //       或許踏入這裡，能實現您更多心願。
+    //     </span>
+    //   );
+    //   document.querySelector("#area").value = "星空隧道";
+    // } else {
+    //   setContentPhone(<span>　　深海搖籃的文案????</span>);
+    //   setContent(<span>　　深海搖籃的文案????</span>);
+    //   document.querySelector("#area").value = "深海搖籃";
+    // }
   };
   const areaThird = () => {
-    setAreaImg1F("./img/area/1-3theater.jpg");
-    // setContent2(<span>請選擇一個區域</span>);
-    // SetAreaImgClassName1F("areaImg");
-    // SetAreaImgClassName2F("NoAreaImg");
-    // SetAreaImgClassName3F("NoAreaImg");
-
+    setAreaImg1F("img/area/1-3theater.jpg");
+    setAreaImgPhone("img/area/1-3theater.jpg");
+    setContent(
+      <span>
+        歡迎來到奇觀劇場，在這寬敞的環形劇場中，匯集了不同生物的表演，每一刻都是令人歎為觀止的美妙出演，坐在觀眾席的您將感受到海洋生物的活力與美好。※依照當天動物的狀況調整演出。
+      </span>
+    );
+    setContentPhone(
+      <span>
+        歡迎來到奇觀劇場，在這寬敞的環形劇場中，匯集了不同生物的表演，每一刻都是令人歎為觀止的美妙出演，坐在觀眾席的您將感受到海洋生物的活力與美好。※依照當天動物的狀況調整演出。
+      </span>
+    );
     (function () {
       handleButtonClick(3);
-      handleBlockClick(3); //區塊點選時區塊按鈕發光
+      handleBlockClick(3);
     })();
-    if (area3 === "奇觀劇場") {
-      setAreaImgPhone("./img/area/1-3theater.jpg");
-      setContent(
-        <span>
-          歡迎來到奇觀劇場，在這寬敞的環形劇場中，匯集了不同生物的表演，每一刻都是令人歎為觀止的美妙出演，坐在觀眾席的您將感受到海洋生物的活力與美好。※依照當天動物的狀況調整演出。
-        </span>
-      );
-      setContentPhone(
-        <span>
-          歡迎來到奇觀劇場，在這寬敞的環形劇場中，匯集了不同生物的表演，每一刻都是令人歎為觀止的美妙出演，坐在觀眾席的您將感受到海洋生物的活力與美好。※依照當天動物的狀況調整演出。
-        </span>
-      );
-      document.querySelector("#area").value = "奇觀劇場";
-    } else if (area3 === "雨林秘境") {
-      setContent(
-        <span>
-          穿過隧道，來到一片欣欣向榮的綠意雨林，在這潮濕溫暖的環境下，
-          許多奇特的物種就此誕生：皮膚有如鎧甲的巨骨舌魚、腹部半透明的玻璃蛙、
-          呆萌的水豚與擁有華麗羽色的金太陽……等。
-        </span>
-      );
-      setContentPhone(
-        <span>
-          穿過隧道，來到一片欣欣向榮的綠意雨林，在這潮濕溫暖的環境下，
-          許多奇特的物種就此誕生：皮膚有如鎧甲的巨骨舌魚、腹部半透明的玻璃蛙、
-          呆萌的水豚與擁有華麗羽色的金太陽……等。
-        </span>
-      );
-      document.querySelector("#area").value = "雨林秘境";
-    } else {
-      setContentPhone(<span>　　你覺得極寒之地的文案要寫什麼呢？</span>);
-      setContent(<span>　　你覺得極寒之地的文案要寫什麼呢？</span>);
-      document.querySelector("#area").value = "極寒之地";
-    }
+
+    // if (area3 === "奇觀劇場") {
+
+    //   document.querySelector("#area").value = "奇觀劇場";
+    // } else if (area3 === "雨林秘境") {
+    //   setContent(
+    //     <span>
+    //       穿過隧道，來到一片欣欣向榮的綠意雨林，在這潮濕溫暖的環境下，
+    //       許多奇特的物種就此誕生：皮膚有如鎧甲的巨骨舌魚、腹部半透明的玻璃蛙、
+    //       呆萌的水豚與擁有華麗羽色的金太陽……等。
+    //     </span>
+    //   );
+    //   setContentPhone(
+    //     <span>
+    //       穿過隧道，來到一片欣欣向榮的綠意雨林，在這潮濕溫暖的環境下，
+    //       許多奇特的物種就此誕生：皮膚有如鎧甲的巨骨舌魚、腹部半透明的玻璃蛙、
+    //       呆萌的水豚與擁有華麗羽色的金太陽……等。
+    //     </span>
+    //   );
+    //   document.querySelector("#area").value = "雨林秘境";
+    // } else {
+    //   setContentPhone(<span>　　你覺得極寒之地的文案要寫什麼呢？</span>);
+    //   setContent(<span>　　你覺得極寒之地的文案要寫什麼呢？</span>);
+    //   document.querySelector("#area").value = "極寒之地";
+    // }
   };
 
   const areaForth = () => {
-    setAreaImg1F("./img/area/1-4tuna.jpg");
-    // setContent2(<span>請選擇一個區域</span>);
-    // setContent3(<span>請選擇一個區域</span>);
-
-    // SetAreaImgClassName1F("areaImg");
-    // SetAreaImgClassName2F("NoAreaImg");
-    // SetAreaImgClassName3F("NoAreaImg");
+    setAreaImg1F("img/area/1-4tuna.jpg");
+    setAreaImgPhone("img/area/1-4tuna.jpg");
+    setContent(
+      <span>
+        這個展區將帶領您漂流至大洋中，在這心型的展區中和魚群一齊洄流，彷彿成為了海洋旅者，穿梭於不同的浩瀚海域之中，與各種海洋生物共譜一曲奇妙的邂逅。
+      </span>
+    );
+    setContentPhone(
+      <span>
+        這個展區將帶領您漂流至大洋中，在這心型的展區中和魚群一齊洄流，彷彿成為了海洋旅者，穿梭於不同的浩瀚海域之中，與各種海洋生物共譜一曲奇妙的邂逅。
+      </span>
+    );
 
     (function () {
       handleButtonClick(4);
       handleBlockClick(4);
     })();
-    if (area4 === "海洋漂流") {
-      setAreaImgPhone("./img/area/1-4tuna.jpg");
-      setContent(
-        <span>
-          這個展區將帶領您漂流至大洋中，在這心型的展區中和魚群一齊洄流，彷彿成為了海洋旅者，穿梭於不同的浩瀚海域之中，與各種海洋生物共譜一曲奇妙的邂逅。
-        </span>
-      );
-      setContentPhone(
-        <span>
-          這個展區將帶領您漂流至大洋中，在這心型的展區中和魚群一齊洄流，彷彿成為了海洋旅者，穿梭於不同的浩瀚海域之中，與各種海洋生物共譜一曲奇妙的邂逅。
-        </span>
-      );
-      document.querySelector("#area").value = "海洋漂流";
-    } else if (area4 === "潮間趣味") {
-      setContent(
-        <span>
-          在這高低潮之間的底質海域，可看見各種蝦蟹貝類，
-          而各種藻類也組織了屬於自己的花園。
-          著名的招潮蟹正揮舞著大螯，如同彈奏小提琴，因此又被喻為「琴師蟹」或「提琴手蟹」，
-          饒富趣味，而海星、海參和海葵觸摸池也在這裡。
-        </span>
-      );
-      setContentPhone(
-        <span>
-          在這高低潮之間的底質海域，可看見各種蝦蟹貝類，
-          而各種藻類也組織了屬於自己的花園。
-          著名的招潮蟹正揮舞著大螯，如同彈奏小提琴，因此又被喻為「琴師蟹」或「提琴手蟹」，
-          饒富趣味，而海星、海參和海葵觸摸池也在這裡。
-        </span>
-      );
-      document.querySelector("#area").value = "潮間趣味";
-    } else {
-      setContent(<span>　　深海搖籃寫完草稿了</span>);
-      setContentPhone(<span>　　深海搖籃寫完草稿了</span>);
-      document.querySelector("#area").value = "深海搖籃";
-    }
   };
+
   const areaFifth = () => {
-    setAreaImg2F("./img/area/2-1jelly.jpg");
-    setAreaImgPhone("./img/area/2-1jelly.jpg");
+    setAreaImg2F("img/area/2-1jelly.jpg");
+    setAreaImgPhone("img/area/2-1jelly.jpg");
 
     (function () {
-      // 區塊的文字
       handleButtonClick(5);
-      handleBlockClick(5); //區塊點選時區塊按鈕發光
+      handleBlockClick(5);
     })();
-
-    // setContentPhone(
-    //   <span>
-    //     各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
-    //   </span>
-    // );
 
     setContent2(
       <span>
         各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
       </span>
     );
+    setContentPhone(
+      <span>
+        各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。
+      </span>
+    );
+    document.querySelector("#area").value = "水母幻境";
   };
 
   const areaSixth = () => {
-    // SetAreaImgClassName1F("NoAreaImg");
-    // SetAreaImgClassName2F("areaImg");
-    // SetAreaImgClassName3F("NoAreaImg");
-    setAreaImgPhone("./img/area/2-2starry.jpg");
-    setAreaImg2F("./img/area/2-2starry.jpg");
+    setAreaImgPhone("img/area/2-2starry.jpg");
+    setAreaImg2F("img/area/2-2starry.jpg");
 
     (function () {
       handleButtonClick(6);
       handleBlockClick(6);
     })();
-
-    // setContent(<span>請選擇一個區域</span>);
-    // setContent3(<span>請選擇一個區域</span>);
 
     setContent2(
       <span>
@@ -345,26 +306,24 @@ const Mix = () => {
         或許踏入這裡，能實現您更多心願。
       </span>
     );
-    // setContentPhone(
-    //   <span>
-    //     您是否覺得如果能在海底自在穿梭該有多好？星空隧道將滿足您的願望，
-    //     在這裡眼前是一片舒心靜謐的藍，魚兒如夜空中繁星點點，又如流星般劃過眼前，
-    //     或許踏入這裡，能實現您更多心願。
-    //   </span>
-    // );
+    setContentPhone(
+      <span>
+        您是否覺得如果能在海底自在穿梭該有多好？星空隧道將滿足您的願望，
+        在這裡眼前是一片舒心靜謐的藍，魚兒如夜空中繁星點點，又如流星般劃過眼前，
+        或許踏入這裡，能實現您更多心願。
+      </span>
+    );
+    document.querySelector("#area").value = "星空隧道";
   };
 
   const areaSeventh = () => {
-    setAreaImgPhone("./img/area/2-3Rainforest.jpg");
-    setAreaImg2F("./img/area/2-3Rainforest.jpg");
+    setAreaImgPhone("img/area/2-3Rainforest.jpg");
+    setAreaImg2F("img/area/2-3Rainforest.jpg");
 
     (function () {
       handleButtonClick(7);
-      handleBlockClick(7); //區塊點選時區塊按鈕發光
+      handleBlockClick(7);
     })();
-
-    // setContent(<span>請選擇一個區域</span>);
-    // setContent3(<span>請選擇一個區域</span>);
 
     setContent2(
       <span>
@@ -373,22 +332,25 @@ const Mix = () => {
         呆萌的水豚與擁有華麗羽色的金太陽等等。
       </span>
     );
+    setContentPhone(
+      <span>
+        穿過隧道，來到一片欣欣向榮的綠意雨林，在這潮濕溫暖的環境下，
+        許多奇特的物種就此誕生：皮膚有如鎧甲的巨骨舌魚、腹部半透明的玻璃蛙、
+        呆萌的水豚與擁有華麗羽色的金太陽……等。
+      </span>
+    );
+    document.querySelector("#area").value = "雨林秘境";
   };
 
   const areaEighth = () => {
-    // SetAreaImgClassName1F("NoAreaImg");
-    // SetAreaImgClassName2F("areaImg");
-    // SetAreaImgClassName3F("NoAreaImg");
-    setAreaImgPhone("./img/area/2-4intertidal.jpg");
-    setAreaImg2F("./img/area/2-4intertidal.jpg");
+    setAreaImgPhone("img/area/2-4intertidal.jpg");
+    setAreaImg2F("img/area/2-4intertidal.jpg");
 
     (function () {
       handleButtonClick(8);
       handleBlockClick(8);
     })();
 
-    // setContent(<span>請選擇一個區域</span>);
-    // setContent3(<span>請選擇一個區域</span>);
     setContent2(
       <span>
         在這高低潮之間的底質海域，可看見各種蝦蟹貝類，
@@ -397,10 +359,19 @@ const Mix = () => {
         饒富趣味，而海星、海參和海葵觸摸池也在這裡喚起您的童心。
       </span>
     );
+    setContentPhone(
+      <span>
+        在這高低潮之間的底質海域，可看見各種蝦蟹貝類，
+        而各種藻類也組織了屬於自己的花園。
+        著名的招潮蟹正揮舞著大螯，如同彈奏小提琴，因此又被喻為「琴師蟹」或「提琴手蟹」，
+        饒富趣味，而海星、海參和海葵觸摸池也在這裡。
+      </span>
+    );
+    document.querySelector("#area").value = "潮間趣味";
   };
   const areaNinth = () => {
-    setAreaImgPhone("./img/area/3-1coral.jpg");
-    setAreaImg3F("./img/area/3-1coral.jpg");
+    setAreaImgPhone("img/area/3-1coral.jpg");
+    setAreaImg3F("img/area/3-1coral.jpg");
 
     (function () {
       handleButtonClick(9);
@@ -412,10 +383,16 @@ const Mix = () => {
         這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
       </span>
     );
+    setContentPhone(
+      <span>
+        這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
+      </span>
+    );
+    document.querySelector("#area").value = "珊瑚寶藏";
   };
   const areaTenth = () => {
-    setAreaImgPhone("./img/area/3-2seal.jpg");
-    setAreaImg3F("./img/area/3-2seal.jpg");
+    setAreaImgPhone("img/area/3-2seal.jpg");
+    setAreaImg3F("img/area/3-2seal.jpg");
 
     (function () {
       handleButtonClick(10);
@@ -423,10 +400,13 @@ const Mix = () => {
     })();
 
     setContent3(<span>還沒貼</span>);
+    setContentPhone(<span>極寒之地的內文</span>);
+    document.querySelector("#area").value = "極寒之地";
   };
+
   const areaEleventh = () => {
-    setAreaImgPhone("./img/area/3-3penguin.jpg");
-    setAreaImg3F("./img/area/3-3penguin.jpg");
+    setAreaImgPhone("img/area/3-3penguin.jpg");
+    setAreaImg3F("img/area/3-3penguin.jpg");
 
     (function () {
       handleButtonClick(11);
@@ -434,9 +414,12 @@ const Mix = () => {
     })();
 
     setContent3(<span>還沒貼11</span>);
+    setContentPhone(<span>企鵝巡禮的內文</span>);
+    document.querySelector("#area").value = "企鵝巡禮";
   };
+
   const areaTwelfth = () => {
-    setAreaImg3F("./img/area/3-1coral.jpg");
+    setAreaImg3F("img/area/3-1coral.jpg");
 
     (function () {
       handleButtonClick(12);
@@ -444,6 +427,8 @@ const Mix = () => {
     })();
 
     setContent3(<span>還沒貼12</span>);
+    setContentPhone(<span>深海搖籃的內文</span>);
+    document.querySelector("#area").value = "深海搖籃";
   };
 
   // ? ----- icon按鈕 -----
@@ -660,7 +645,7 @@ const Mix = () => {
         handleButtonClick(1); // 區塊的文字
         handleBlockClick(1); //區塊點選時區塊按鈕發光
       })();
-      setAreaImgPhone("./img/area/1-1Garden.jpg");
+      setAreaImgPhone("img/area/1-1Garden.jpg");
       setContentPhone(
         <span>
           漫步花園作為館內第一個展區，引您進入美妙的海中世界，五彩斑斕的海生植物在水中舞動，猶如在風中搖曳的花兒，魚群如花海中的精靈般，邀請您共同在海中花園優游。
@@ -677,7 +662,7 @@ const Mix = () => {
       document.querySelector(".map-3F-phone").style.opacity = "0";
       document.querySelector(".map-3F-phone").style.display = "none";
     } else if (e.target.value === "2F") {
-      setAreaImgPhone("./img/area/2-1jelly.jpg");
+      setAreaImgPhone("img/area/2-1jelly.jpg");
       (function () {
         handleButtonClick(5); // 區塊的文字
         handleBlockClick(5); //區塊點選時區塊按鈕發光
@@ -698,12 +683,11 @@ const Mix = () => {
       document.querySelector(".map-3F-phone").style.opacity = "0";
       document.querySelector(".map-3F-phone").style.display = "none";
     } else {
-      // document.querySelector("#area").value = "---請選擇---";
-      setAreaImgPhone("./img/area/3-1coral.jpg");
+      setAreaImgPhone("img/area/3-1coral.jpg");
 
       (function () {
-        handleButtonClick(9); // 區塊的文字
-        handleBlockClick(9); //區塊點選時區塊按鈕發光
+        handleButtonClick(9);
+        handleBlockClick(9);
       })();
       setContentPhone(
         <span>
@@ -725,7 +709,7 @@ const Mix = () => {
 
   const areaHandler = (e) => {
     if (e.target.value === "漫步花園") {
-      setAreaImgPhone("./img/area/1-1Garden.jpg");
+      setAreaImgPhone("img/area/1-1Garden.jpg");
 
       setContentPhone(
         <span>
@@ -736,7 +720,7 @@ const Mix = () => {
         handleButtonClick(1);
       })();
     } else if (e.target.value === "淺海迴廊") {
-      setAreaImgPhone("./img/area/1-2cloister.jpg");
+      setAreaImgPhone("img/area/1-2cloister.jpg");
 
       setContentPhone(
         <span>
@@ -747,7 +731,7 @@ const Mix = () => {
         handleButtonClick(2);
       })();
     } else if (e.target.value === "奇觀劇場") {
-      setAreaImgPhone("./img/area/1-3theater.jpg");
+      setAreaImgPhone("img/area/1-3theater.jpg");
 
       setContentPhone(
         <span>
@@ -758,7 +742,7 @@ const Mix = () => {
         handleButtonClick(3);
       })();
     } else if (e.target.value === "海洋漂流") {
-      setAreaImgPhone("./img/area/1-4tuna.jpg");
+      setAreaImgPhone("img/area/1-4tuna.jpg");
 
       setContentPhone(
         <span>
@@ -769,7 +753,7 @@ const Mix = () => {
         handleButtonClick(4);
       })();
     } else if (e.target.value === "水母幻境") {
-      setAreaImgPhone("./img/area/2-1jelly.jpg");
+      setAreaImgPhone("img/area/2-1jelly.jpg");
       setContentPhone(
         <span>
           各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
@@ -779,7 +763,7 @@ const Mix = () => {
         handleButtonClick(5);
       })();
     } else if (e.target.value === "星空隧道") {
-      setAreaImgPhone("./img/area/2-2starry.jpg");
+      setAreaImgPhone("img/area/2-2starry.jpg");
 
       setContentPhone(
         <span>
@@ -792,7 +776,7 @@ const Mix = () => {
         handleButtonClick(6);
       })();
     } else if (e.target.value === "雨林秘境") {
-      setAreaImgPhone("./img/area/2-3Rainforest.jpg");
+      setAreaImgPhone("img/area/2-3Rainforest.jpg");
 
       setContentPhone(
         <span>
@@ -805,7 +789,7 @@ const Mix = () => {
         handleButtonClick(7);
       })();
     } else if (e.target.value === "潮間趣味") {
-      setAreaImgPhone("./img/area/2-4intertidal.jpg");
+      setAreaImgPhone("img/area/2-4intertidal.jpg");
 
       setContentPhone(
         <span>
@@ -819,7 +803,7 @@ const Mix = () => {
         handleButtonClick(8);
       })();
     } else if (e.target.value === "珊瑚寶藏") {
-      setAreaImgPhone("./img/area/3-1coral.jpg");
+      setAreaImgPhone("img/area/3-1coral.jpg");
 
       setContentPhone(
         <span>
@@ -830,21 +814,21 @@ const Mix = () => {
         handleButtonClick(9);
       })();
     } else if (e.target.value === "極寒之地") {
-      setAreaImgPhone("./img/area/3-2seal.jpg");
+      setAreaImgPhone("img/area/3-2seal.jpg");
 
       setContentPhone(<span>極寒之地的內文</span>);
       (function () {
         handleButtonClick(10);
       })();
     } else if (e.target.value === "企鵝巡禮") {
-      setAreaImgPhone("./img/area/3-3penguin.jpg");
+      setAreaImgPhone("img/area/3-3penguin.jpg");
 
       setContentPhone(<span>企鵝巡禮的內文</span>);
       (function () {
         handleButtonClick(11);
       })();
     } else if (e.target.value === "深海搖籃") {
-      setContentPhone(<span>　　深海搖籃的內文</span>);
+      setContentPhone(<span>深海搖籃的內文</span>);
       (function () {
         handleButtonClick(12);
       })();
@@ -926,6 +910,7 @@ const Mix = () => {
         color: selectedButton === 1 ? "#182434" : "",
         border: selectedButton === 1 ? "none" : "1px solid white",
         marginRight: "19.3px",
+        fontWeight: 500,
       },
     },
     {
@@ -944,6 +929,7 @@ const Mix = () => {
         border: selectedButton === 2 ? "none" : "1px solid white",
 
         marginRight: "19.3px",
+        fontWeight: 500,
       },
     },
     {
@@ -960,6 +946,7 @@ const Mix = () => {
         color: selectedButton === 3 ? "#182434" : "",
         border: selectedButton === 3 ? "none" : "1px solid white",
         marginRight: "19.3px",
+        fontWeight: 500,
       },
     },
     {
@@ -975,6 +962,7 @@ const Mix = () => {
         backgroundColor: selectedButton === 4 ? " #e0f8ff" : "",
         color: selectedButton === 4 ? "#182434" : "",
         border: selectedButton === 4 ? "none" : "1px solid white",
+        fontWeight: 500,
       },
     },
   ];
@@ -991,8 +979,8 @@ const Mix = () => {
 
         backgroundColor: selectedButton === 5 ? " #e0f8ff" : "",
         color: selectedButton === 5 ? "#182434" : "",
-        border: selectedButton === 5 ? "none" : "1px solid white",
-
+        border: selectedButton === 5 ? "none" : "1.5px solid white",
+        fontWeight: 500,
         marginRight: "19.3px",
       },
     },
@@ -1010,8 +998,8 @@ const Mix = () => {
         backgroundColor: selectedButton === 6 ? " #e0f8ff" : "",
         color: selectedButton === 6 ? "#182434" : "",
 
-        border: selectedButton === 6 ? "none" : "1px solid white",
-
+        border: selectedButton === 6 ? "none" : "1.5px solid white",
+        fontWeight: 500,
         marginRight: "19.3px",
       },
     },
@@ -1027,8 +1015,8 @@ const Mix = () => {
 
         backgroundColor: selectedButton === 7 ? " #e0f8ff" : "",
         color: selectedButton === 7 ? "#182434" : "",
-        border: selectedButton === 7 ? "none" : "1px solid white",
-
+        border: selectedButton === 7 ? "none" : "1.5px solid white",
+        fontWeight: 500,
         marginRight: "19.3px",
       },
     },
@@ -1044,7 +1032,8 @@ const Mix = () => {
 
         backgroundColor: selectedButton === 8 ? " #e0f8ff" : "",
         color: selectedButton === 8 ? "#182434" : "",
-        border: selectedButton === 8 ? "none" : "1px solid white",
+        border: selectedButton === 8 ? "none" : "1.5px solid white",
+        fontWeight: 500,
       },
     },
   ];
@@ -1062,8 +1051,8 @@ const Mix = () => {
 
         backgroundColor: selectedButton === 9 ? " #e0f8ff" : "",
         color: selectedButton === 9 ? "#182434" : "",
-        border: selectedButton === 9 ? "none" : "1px solid white",
-
+        border: selectedButton === 9 ? "none" : "1.5px solid white",
+        fontWeight: 500,
         marginRight: "41px",
       },
     },
@@ -1080,8 +1069,9 @@ const Mix = () => {
 
         backgroundColor: selectedButton === 10 ? " #e0f8ff" : "",
         color: selectedButton === 10 ? "#182434" : "",
-        border: selectedButton === 10 ? "none" : "1px solid white",
+        border: selectedButton === 10 ? "none" : "1.5px solid white",
         marginRight: "41px",
+        fontWeight: 500,
       },
     },
     {
@@ -1096,8 +1086,9 @@ const Mix = () => {
 
         backgroundColor: selectedButton === 11 ? " #e0f8ff" : "",
         color: selectedButton === 11 ? "#182434" : "",
-        border: selectedButton === 11 ? "none" : "1px solid white",
+        border: selectedButton === 11 ? "none" : "1.5px solid white",
         marginRight: "41px",
+        fontWeight: 500,
       },
     },
     {
@@ -1112,9 +1103,8 @@ const Mix = () => {
 
         backgroundColor: selectedButton === 12 ? " #e0f8ff" : "",
         color: selectedButton === 12 ? "#182434" : "",
-        border: selectedButton === 12 ? "none" : "1px solid white",
-
-        // borderRadius: "80%",
+        border: selectedButton === 12 ? "none" : "1.5px solid white",
+        fontWeight: 500,
       },
     },
   ];
@@ -1134,7 +1124,7 @@ const Mix = () => {
   const NewIconButtonDataFirst = [
     {
       id: 1,
-      src: "./img/NewIconsButton/wc2.svg",
+      src: "img/NewIconsButton/wc2.svg",
       alt: "toliet",
       onClick: btnWCHandler,
       p: "化妝室",
@@ -1143,7 +1133,7 @@ const Mix = () => {
 
     {
       id: 2,
-      src: "./img/NewIconsButton/breast.svg",
+      src: "img/NewIconsButton/breast.svg",
       alt: "breast",
       onClick: btnBreastHandler,
       p: "哺乳室",
@@ -1151,7 +1141,7 @@ const Mix = () => {
     },
     {
       id: 3,
-      src: "./img/NewIconsButton/ATM.svg",
+      src: "img/NewIconsButton/ATM.svg",
       alt: "ATM",
       onClick: btnATMHandler,
       p: "提款機",
@@ -1159,7 +1149,7 @@ const Mix = () => {
     },
     {
       id: 4,
-      src: "./img/NewIconsButton/info.svg",
+      src: "img/NewIconsButton/info.svg",
       alt: "info",
       onClick: btnInfoHandler,
       p: "服務台",
@@ -1167,7 +1157,7 @@ const Mix = () => {
     },
     {
       id: 5,
-      src: "./img/NewIconsButton/restaurant.svg",
+      src: "img/NewIconsButton/restaurant.svg",
       alt: "restaurant",
       onClick: btnRestaurantHandler,
       p: "餐廳",
@@ -1178,7 +1168,7 @@ const Mix = () => {
   const NewIconButtonDataSecond = [
     {
       id: 1,
-      src: "./img/NewIconsButton/shop.svg",
+      src: "img/NewIconsButton/shop.svg",
       alt: "shop",
       onClick: btnShopHandler,
       p: "禮品店",
@@ -1187,7 +1177,7 @@ const Mix = () => {
 
     {
       id: 2,
-      src: "./img/NewIconsButton/AED.svg",
+      src: "img/NewIconsButton/AED.svg",
       alt: "AED",
       onClick: btnAEDHandler,
       p: "急救器",
@@ -1195,7 +1185,7 @@ const Mix = () => {
     },
     {
       id: 3,
-      src: "./img/NewIconsButton/escalator.svg",
+      src: "img/NewIconsButton/escalator.svg",
       alt: "escalator",
       onClick: btnEscalatorHandler,
       p: "手扶梯",
@@ -1203,7 +1193,7 @@ const Mix = () => {
     },
     {
       id: 4,
-      src: "./img/NewIconsButton/elevator.svg",
+      src: "img/NewIconsButton/elevator.svg",
       alt: "elevator",
       onClick: btnElevatorHandler,
       p: "電梯",
@@ -1211,7 +1201,7 @@ const Mix = () => {
     },
     {
       id: 5,
-      src: "./img/NewIconsButton/exit.svg",
+      src: "img/NewIconsButton/exit.svg",
       alt: "exit",
       onClick: btnExitHandler,
       p: "逃生口",
@@ -1247,55 +1237,57 @@ const Mix = () => {
       }px)`;
     }
 
-    // 1樓地圖
-    if (scrollPositionY < 600) {
-      document.querySelector(".map-1F").style.opacity = "1";
-      document.querySelector(".map-1F").style.display = "block";
-      setSelectedButton(1);
-      setActiveRegion(1);
-      setContent(
-        <span>
-          漫步花園作為館內第一個展區，引您進入美妙的海中世界，五彩斑斕的海生植物在水中舞動，猶如在風中搖曳的花兒，魚群如花海中的精靈般，邀請您共同在海中花園優游。
-        </span>
-      );
-      setAreaImg1F("./img/area/1-1Garden.jpg");
-    } else {
-      document.querySelector(".map-1F").style.opacity = "0";
-      document.querySelector(".map-1F").style.display = "none";
-    }
+    if (window.innerWidth > 768) {
+      // 1樓地圖
+      if (scrollPositionY < 600) {
+        document.querySelector(".map-1F").style.opacity = "1";
+        document.querySelector(".map-1F").style.display = "block";
+        setSelectedButton(1);
+        setActiveRegion(1);
+        setContent(
+          <span>
+            漫步花園作為館內第一個展區，引您進入美妙的海中世界，五彩斑斕的海生植物在水中舞動，猶如在風中搖曳的花兒，魚群如花海中的精靈般，邀請您共同在海中花園優游。
+          </span>
+        );
+        setAreaImg1F("img/area/1-1Garden.jpg");
+      } else {
+        document.querySelector(".map-1F").style.opacity = "0";
+        document.querySelector(".map-1F").style.display = "none";
+      }
 
-    // 2樓地圖
-    if (scrollPositionY >= 600 && scrollPositionY < 1200) {
-      document.querySelector(".map-2F").style.opacity = "1";
-      document.querySelector(".map-2F").style.display = "block";
-      setSelectedButton(5);
-      setActiveRegion(5);
-      setContent(
-        <span>
-          各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
-        </span>
-      );
-      setAreaImg2F("./img/area/2-1jelly.jpg");
-    } else {
-      document.querySelector(".map-2F").style.opacity = "0";
-      document.querySelector(".map-2F").style.display = "none";
-    }
+      // 2樓地圖
+      if (scrollPositionY >= 600 && scrollPositionY < 1200) {
+        document.querySelector(".map-2F").style.opacity = "1";
+        document.querySelector(".map-2F").style.display = "block";
+        setSelectedButton(5);
+        setActiveRegion(5);
+        setContent(
+          <span>
+            各色虹光灑在透明的水母身上，無邊鏡面創造奇幻氛圍，顏色各異的水母在您身邊悠遊，彷彿進入幻境般暢遊水母世界，享受這絢麗的視覺饗宴，讓您的心一起翩翩起舞。{" "}
+          </span>
+        );
+        setAreaImg2F("img/area/2-1jelly.jpg");
+      } else {
+        document.querySelector(".map-2F").style.opacity = "0";
+        document.querySelector(".map-2F").style.display = "none";
+      }
 
-    // 3樓地圖
-    if (scrollPositionY >= 1200) {
-      document.querySelector(".map-3F").style.opacity = "1";
-      document.querySelector(".map-3F").style.display = "block";
-      setSelectedButton(9);
-      setActiveRegion(9);
-      setContent(
-        <span>
-          這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
-        </span>
-      );
-      setAreaImg3F("./img/area/3-1coral.jpg");
-    } else {
-      document.querySelector(".map-3F").style.opacity = "0";
-      document.querySelector(".map-3F").style.display = "none";
+      // 3樓地圖
+      if (scrollPositionY >= 1200) {
+        document.querySelector(".map-3F").style.opacity = "1";
+        document.querySelector(".map-3F").style.display = "block";
+        setSelectedButton(9);
+        setActiveRegion(9);
+        setContent(
+          <span>
+            這是一個隱藏在海洋深處的秘密王國，絢麗的珊瑚群落提供了各式海洋生物安全的棲息地，他們是地球生態系統的重要一環，是地球上的珍貴寶藏。
+          </span>
+        );
+        setAreaImg3F("img/area/3-1coral.jpg");
+      } else {
+        document.querySelector(".map-3F").style.opacity = "0";
+        document.querySelector(".map-3F").style.display = "none";
+      }
     }
 
     if (
@@ -1393,7 +1385,6 @@ const Mix = () => {
           {/* h1以下的左右邊 */}
 
           <div className="map_all row">
-            {/* 手機版選單 - 原本在map裡面 */}
             <div className="floor-select">
               <label htmlFor="floor">請選擇樓層：</label>
               <select
@@ -1456,7 +1447,7 @@ const Mix = () => {
                       fontSize="18"
                       className="areaStroke"
                       transform="matrix(2 0 0 2 570 300)"
-                      fill={selectedButton === 1 ? "rgb(24, 36, 52)" : "white"}
+                      fill={activeRegion === 1 ? "rgb(24, 36, 52)" : "white"}
                     >
                       漫步花園
                     </text>
@@ -1472,7 +1463,7 @@ const Mix = () => {
                       fontSize="18"
                       className="areaStroke"
                       transform="matrix(2 0 0 2 30 216)"
-                      fill={selectedButton === 2 ? "rgb(24, 36, 52)" : "white"}
+                      fill={activeRegion === 2 ? "rgb(24, 36, 52)" : "white"}
                     >
                       淺海迴廊
                     </text>
@@ -1488,7 +1479,7 @@ const Mix = () => {
                     <text
                       fontSize="18"
                       transform="matrix(2 0 0 2 30 456)"
-                      fill={selectedButton === 3 ? "rgb(24, 36, 52)" : "white"}
+                      fill={activeRegion === 3 ? "rgb(24, 36, 52)" : "white"}
                     >
                       奇觀劇場
                     </text>
@@ -1504,7 +1495,7 @@ const Mix = () => {
                     <text
                       fontSize="18"
                       transform="matrix(2 0 0 2 308.5 266)"
-                      fill={selectedButton === 4 ? "#182434" : "white"}
+                      fill={activeRegion === 4 ? "#182434" : "white"}
                     >
                       海洋漂流
                     </text>
@@ -1542,85 +1533,85 @@ const Mix = () => {
                   <div className="floor-icons-1F-phone">
                     <img
                       className="wc1 icons"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="wc2 icons"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="wc3 icons"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="breast icons"
-                      src="./img/icons/breast.svg"
+                      src="img/icons/breast.svg"
                       alt="breast"
                       style={iconBreast}
                     />
                     <img
                       className="breast2 icons"
-                      src="./img/icons/breast.svg"
+                      src="img/icons/breast.svg"
                       alt="breast"
                       style={iconBreast}
                     />
                     <img
                       className="AED icons"
-                      src="./img/icons/AED.svg"
+                      src="img/icons/AED.svg"
                       style={iconAED}
                       alt="AED"
                     />
                     <img
                       className="ATM icons"
-                      src="./img/icons/ATM.svg"
+                      src="img/icons/ATM.svg"
                       style={iconATM}
                       alt="ATM"
                     />
                     <img
                       className="elevator icons"
-                      src="./img/icons/elevator.svg"
+                      src="img/icons/elevator.svg"
                       style={iconElevator}
                       alt="elevator"
                     />
                     <img
                       className="exit icons"
-                      src="./img/icons/exit.svg"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
                     <img
                       className="exit2 icons"
-                      src="./img/icons/exit.svg"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
                     <img
                       className="info icons"
-                      src="./img/icons/info.svg"
+                      src="img/icons/info.svg"
                       style={iconInfo}
                       alt="info"
                     />
                     <img
                       className="restaurant icons"
-                      src="./img/icons/restaurant.svg"
+                      src="img/icons/restaurant.svg"
                       style={iconRestaurant}
                       alt="restaurant"
                     />
                     <img
                       className="shop icons"
-                      src="./img/icons/shop.svg"
+                      src="img/icons/shop.svg"
                       style={iconShop}
                       alt="shop"
                     />
                     <img
                       className="escalator icons"
-                      src="./img/icons/escalator.svg"
+                      src="img/icons/escalator.svg"
                       style={iconEscalator}
                       alt="escalator"
                     />
@@ -1628,60 +1619,6 @@ const Mix = () => {
                 </div>
 
                 <div className="map-2F-phone">
-                  <div className="floor-icons-2F">
-                    <img
-                      className="wc1 icons icon-computer"
-                      src="./img/icons/wc.svg"
-                      alt="toilet"
-                      style={iconWc}
-                    />
-                    <img
-                      className="wc2 icons icon-computer"
-                      src="./img/icons/wc.svg"
-                      alt="toilet"
-                      style={iconWc}
-                    />
-
-                    <img
-                      className="breast icons icon-computer"
-                      src="./img/icons/breast.svg"
-                      alt="breast"
-                      style={iconBreast}
-                    />
-
-                    <img
-                      className="AED icons icon-computer"
-                      src="./img/icons/AED.svg"
-                      style={iconAED}
-                      alt="AED"
-                    />
-
-                    <img
-                      className="elevator icons icon-computer"
-                      src="./img/icons/elevator.svg"
-                      style={iconElevator}
-                      alt="elevator"
-                    />
-                    <img
-                      className="exit icons icon-computer"
-                      src="./img/icons/exit.svg"
-                      style={iconExit}
-                      alt="exit"
-                    />
-                    <img
-                      className="exit2 icons icon-computer"
-                      src="./img/icons/exit.svg"
-                      style={iconExit}
-                      alt="exit"
-                    />
-                    <img
-                      className="escalator icons icon-computer"
-                      src="./img/icons/escalator.svg"
-                      style={iconEscalator}
-                      alt="escalator"
-                    />
-                  </div>
-
                   <svg
                     className="phoneSvg"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1700,7 +1637,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 500 130)"
-                      fill={selectedButton === 5 ? "#182434" : "white"}
+                      fill={activeRegion === 5 ? "#182434" : "white"}
                     >
                       水母幻境
                     </text>
@@ -1715,7 +1652,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 330 490)"
-                      fill={selectedButton === 6 ? "#182434" : "white"}
+                      fill={activeRegion === 6 ? "#182434" : "white"}
                     >
                       星空隧道
                     </text>
@@ -1730,7 +1667,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 150 260)"
-                      fill={selectedButton === 7 ? "#182434" : "white"}
+                      fill={activeRegion === 7 ? "#182434" : "white"}
                     >
                       雨林秘境
                     </text>
@@ -1744,7 +1681,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 150 115)"
-                      fill={selectedButton === 8 ? "#182434" : "white"}
+                      fill={activeRegion === 8 ? "#182434" : "white"}
                     >
                       潮間趣味
                     </text>
@@ -1755,77 +1692,131 @@ const Mix = () => {
                       stroke="#FFF"
                     />
                   </svg>
-                </div>
 
-                {/* --------  3樓地圖  -------- */}
-                <div className="map-3F-phone">
-                  <div className="floor-icons-3F">
+                  <div className="floor-icons-2F-phone">
                     <img
-                      className="wc1 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      className="wc1 icons"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
-                      className="wc2 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      className="wc2 icons"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
+
                     <img
-                      className="wc3 icons icon-computer"
-                      src="./img/icons/wc.svg"
-                      alt="toilet"
-                      style={iconWc}
-                    />
-                    <img
-                      className="breast icons icon-computer"
-                      src="./img/icons/breast.svg"
+                      className="breast icons"
+                      src="img/icons/breast.svg"
                       alt="breast"
                       style={iconBreast}
                     />
 
                     <img
-                      className="AED icons icon-computer"
-                      src="./img/icons/AED.svg"
+                      className="AED icons "
+                      src="img/icons/AED.svg"
                       style={iconAED}
                       alt="AED"
                     />
+
                     <img
-                      className="ATM icons icon-computer"
-                      src="./img/icons/ATM.svg"
-                      style={iconATM}
-                      alt="ATM"
-                    />
-                    <img
-                      className="elevator icons icon-computer"
-                      src="./img/icons/elevator.svg"
+                      className="elevator icons"
+                      src="img/icons/elevator.svg"
                       style={iconElevator}
                       alt="elevator"
                     />
                     <img
-                      className="exit icons icon-computer"
-                      src="./img/icons/exit.svg"
+                      className="exit icons"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
                     <img
-                      className="exit2 icons icon-computer"
-                      src="./img/icons/exit.svg"
+                      className="exit2 icons"
+                      src="img/icons/exit.svg"
+                      style={iconExit}
+                      alt="exit"
+                    />
+                    <img
+                      className="escalator icons"
+                      src="img/icons/escalator.svg"
+                      style={iconEscalator}
+                      alt="escalator"
+                    />
+                  </div>
+                </div>
+
+                {/* --------  3樓地圖  -------- */}
+                <div className="map-3F-phone">
+                  <div className="floor-icons-3F-phone">
+                    <img
+                      className="wc1 icons"
+                      src="img/icons/wc.svg"
+                      alt="toilet"
+                      style={iconWc}
+                    />
+                    <img
+                      className="wc2 icons"
+                      src="img/icons/wc.svg"
+                      alt="toilet"
+                      style={iconWc}
+                    />
+                    <img
+                      className="wc3 icons"
+                      src="img/icons/wc.svg"
+                      alt="toilet"
+                      style={iconWc}
+                    />
+                    <img
+                      className="breast icons"
+                      src="img/icons/breast.svg"
+                      alt="breast"
+                      style={iconBreast}
+                    />
+
+                    <img
+                      className="AED icons"
+                      src="img/icons/AED.svg"
+                      style={iconAED}
+                      alt="AED"
+                    />
+                    <img
+                      className="ATM icons"
+                      src="img/icons/ATM.svg"
+                      style={iconATM}
+                      alt="ATM"
+                    />
+                    <img
+                      className="elevator icons"
+                      src="img/icons/elevator.svg"
+                      style={iconElevator}
+                      alt="elevator"
+                    />
+                    <img
+                      className="exit icons"
+                      src="img/icons/exit.svg"
+                      style={iconExit}
+                      alt="exit"
+                    />
+                    <img
+                      className="exit2 icons"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
 
                     <img
-                      className="restaurant icons icon-computer"
-                      src="./img/icons/restaurant.svg"
+                      className="restaurant icons"
+                      src="img/icons/restaurant.svg"
                       style={iconRestaurant}
                       alt="restaurant"
                     />
 
                     <img
-                      className="escalator icons icon-computer"
-                      src="../img/icons/escalator.svg"
+                      className="escalator icons"
+                      src="img/icons/escalator.svg"
                       style={iconEscalator}
                       alt="escalator"
                     />
@@ -1847,7 +1838,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 530 145)"
-                      fill={selectedButton === 9 ? "#182434" : "white"}
+                      fill={activeRegion === 9 ? "#182434" : "white"}
                     >
                       珊瑚寶藏
                     </text>
@@ -1859,7 +1850,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 530 400)"
-                      fill={selectedButton === 10 ? "#182434" : "white"}
+                      fill={activeRegion === 10 ? "#182434" : "white"}
                     >
                       極寒之地
                     </text>
@@ -1872,7 +1863,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 160 350)"
-                      fill={selectedButton === 11 ? "#182434" : "white"}
+                      fill={activeRegion === 11 ? "#182434" : "white"}
                     >
                       企鵝巡禮
                     </text>
@@ -1883,7 +1874,7 @@ const Mix = () => {
                     />
                     <text
                       transform="matrix(2 0 0 2 160 150)"
-                      fill={selectedButton === 12 ? "#182434" : "white"}
+                      fill={activeRegion === 12 ? "#182434" : "white"}
                     >
                       深海搖籃
                     </text>
@@ -2048,86 +2039,86 @@ const Mix = () => {
                   <div className="floor-icons-1F ">
                     <img
                       className="wc1 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
 
                     <img
                       className="wc2 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="wc3 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="breast icons icon-computer"
-                      src="./img/icons/breast.svg"
+                      src="img/icons/breast.svg"
                       alt="breast"
                       style={iconBreast}
                     />
                     <img
                       className="breast2 icons icon-computer"
-                      src="./img/icons/breast.svg"
+                      src="img/icons/breast.svg"
                       alt="breast"
                       style={iconBreast}
                     />
                     <img
                       className="AED icons icon-computer"
-                      src="./img/icons/AED.svg"
+                      src="img/icons/AED.svg"
                       style={iconAED}
                       alt="AED"
                     />
                     <img
                       className="ATM icons icon-computer"
-                      src="./img/icons/ATM.svg"
+                      src="img/icons/ATM.svg"
                       style={iconATM}
                       alt="ATM"
                     />
                     <img
                       className="elevator icons icon-computer"
-                      src="./img/icons/elevator.svg"
+                      src="img/icons/elevator.svg"
                       style={iconElevator}
                       alt="elevator"
                     />
                     <img
                       className="exit icons icon-computer"
-                      src="./img/icons/exit.svg"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
                     <img
                       className="exit2 icons icon-computer"
-                      src="./img/icons/exit.svg"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
                     <img
                       className="info icons icon-computer"
-                      src="./img/icons/info.svg"
+                      src="img/icons/info.svg"
                       style={iconInfo}
                       alt="info"
                     />
                     <img
                       className="restaurant icons icon-computer"
-                      src="./img/icons/restaurant.svg"
+                      src="img/icons/restaurant.svg"
                       style={iconRestaurant}
                       alt="restaurant"
                     />
                     <img
                       className="shop icons icon-computer"
-                      src="./img/icons/shop.svg"
+                      src="img/icons/shop.svg"
                       style={iconShop}
                       alt="shop"
                     />
                     <img
                       className="escalator icons icon-computer"
-                      src="./img/icons/escalator.svg"
+                      src="img/icons/escalator.svg"
                       style={iconEscalator}
                       alt="escalator"
                     />
@@ -2135,62 +2126,6 @@ const Mix = () => {
                 </div>
 
                 <div className="map-2F">
-                  {/* 電腦icon */}
-                  <div className="floor-icons-2F">
-                    <img
-                      className="wc1 icons icon-computer"
-                      src="./img/icons/wc.svg"
-                      alt="toilet"
-                      style={iconWc}
-                    />
-                    <img
-                      className="wc2 icons icon-computer"
-                      src="./img/icons/wc.svg"
-                      alt="toilet"
-                      style={iconWc}
-                    />
-
-                    <img
-                      className="breast icons icon-computer"
-                      src="./img/icons/breast.svg"
-                      alt="breast"
-                      style={iconBreast}
-                    />
-
-                    <img
-                      className="AED icons icon-computer"
-                      src="./img/icons/AED.svg"
-                      style={iconAED}
-                      alt="AED"
-                    />
-
-                    <img
-                      className="elevator icons icon-computer"
-                      src="./img/icons/elevator.svg"
-                      style={iconElevator}
-                      alt="elevator"
-                    />
-                    <img
-                      className="exit icons icon-computer"
-                      src="./img/icons/exit.svg"
-                      style={iconExit}
-                      alt="exit"
-                    />
-                    <img
-                      className="exit2 icons icon-computer"
-                      src="./img/icons/exit.svg"
-                      style={iconExit}
-                      alt="exit"
-                    />
-
-                    <img
-                      className="escalator icons icon-computer"
-                      src="./img/icons/escalator.svg"
-                      style={iconEscalator}
-                      alt="escalator"
-                    />
-                  </div>
-
                   <svg
                     className="computerSvg"
                     xmlns="http://www.w3.org/2000/svg"
@@ -2261,6 +2196,61 @@ const Mix = () => {
                       // strokeWidth={5}
                     />
                   </svg>
+                  {/* 電腦icon */}
+                  <div className="floor-icons-2F">
+                    <img
+                      className="wc1 icons icon-computer"
+                      src="img/icons/wc.svg"
+                      alt="toilet"
+                      style={iconWc}
+                    />
+                    <img
+                      className="wc2 icons icon-computer"
+                      src="img/icons/wc.svg"
+                      alt="toilet"
+                      style={iconWc}
+                    />
+
+                    <img
+                      className="breast icons icon-computer"
+                      src="img/icons/breast.svg"
+                      alt="breast"
+                      style={iconBreast}
+                    />
+
+                    <img
+                      className="AED icons icon-computer"
+                      src="img/icons/AED.svg"
+                      style={iconAED}
+                      alt="AED"
+                    />
+
+                    <img
+                      className="elevator icons icon-computer"
+                      src="img/icons/elevator.svg"
+                      style={iconElevator}
+                      alt="elevator"
+                    />
+                    <img
+                      className="exit icons icon-computer"
+                      src="img/icons/exit.svg"
+                      style={iconExit}
+                      alt="exit"
+                    />
+                    <img
+                      className="exit2 icons icon-computer"
+                      src="img/icons/exit.svg"
+                      style={iconExit}
+                      alt="exit"
+                    />
+
+                    <img
+                      className="escalator icons icon-computer"
+                      src="img/icons/escalator.svg"
+                      style={iconEscalator}
+                      alt="escalator"
+                    />
+                  </div>
                 </div>
 
                 {/* --------  3樓地圖  -------- */}
@@ -2269,70 +2259,70 @@ const Mix = () => {
                   <div className="floor-icons-3F">
                     <img
                       className="wc1 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="wc2 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="wc3 icons icon-computer"
-                      src="./img/icons/wc.svg"
+                      src="img/icons/wc.svg"
                       alt="toilet"
                       style={iconWc}
                     />
                     <img
                       className="breast icons icon-computer"
-                      src="./img/icons/breast.svg"
+                      src="img/icons/breast.svg"
                       alt="breast"
                       style={iconBreast}
                     />
 
                     <img
                       className="AED icons icon-computer"
-                      src="./img/icons/AED.svg"
+                      src="img/icons/AED.svg"
                       style={iconAED}
                       alt="AED"
                     />
                     <img
                       className="ATM icons icon-computer"
-                      src="./img/icons/ATM.svg"
+                      src="img/icons/ATM.svg"
                       style={iconATM}
                       alt="ATM"
                     />
                     <img
                       className="elevator icons icon-computer"
-                      src="./img/icons/elevator.svg"
+                      src="img/icons/elevator.svg"
                       style={iconElevator}
                       alt="elevator"
                     />
                     <img
                       className="exit icons icon-computer"
-                      src="./img/icons/exit.svg"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
                     <img
                       className="exit2 icons icon-computer"
-                      src="./img/icons/exit.svg"
+                      src="img/icons/exit.svg"
                       style={iconExit}
                       alt="exit"
                     />
 
                     <img
                       className="restaurant icons icon-computer"
-                      src="./img/icons/restaurant.svg"
+                      src="img/icons/restaurant.svg"
                       style={iconRestaurant}
                       alt="restaurant"
                     />
 
                     <img
                       className="escalator icons icon-computer"
-                      src="./img/icons/escalator.svg"
+                      src="img/icons/escalator.svg"
                       style={iconEscalator}
                       alt="escalator"
                     />

@@ -8,17 +8,11 @@ import "./assets/all.scss";
 
 function App() {
   return (
-    <div>
+    <div id="test">
       <HeaderForPages />
 
       <Mix />
-      <Sidebar
-        link1="首頁"
-        link2="館內資訊"
-        link3="參觀資訊"
-        link4="購票資訊"
-        link5="常見問答"
-      />
+      <Sidebar />
       <Footer
         link1="首頁"
         link2="購票資訊"

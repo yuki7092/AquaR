@@ -11,21 +11,15 @@ const Footer = ({
   linkHref5,
 }) => {
   return (
-    <footer>
-      <br />
-      <br />
-      <br />
+    <footer style={{ background: "#000" }}>
       <div className="container">
         <div className="topBlock">
           <div className="logoBlock">
             <a href="/">
-              <img
-                className="logoImg"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/588px-Google_%22G%22_Logo.svg.png"
-                alt=""
-              />
-              <p className="logoText">AquaR</p>
+              <img className="logoImg" src="img/logo-small.png" alt="" />
+              <span className="logoText">AquaR</span>
             </a>
+            <p>408台中市南屯區黎明路二段658號, 1</p>
           </div>
 
           <div className="communityBlcok">
