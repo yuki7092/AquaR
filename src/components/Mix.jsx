@@ -399,8 +399,16 @@ const Mix = () => {
       handleBlockClick(10);
     })();
 
-    setContent3(<span>還沒貼</span>);
-    setContentPhone(<span>極寒之地的內文</span>);
+    setContent3(
+      <span>
+        極寒之地將引領您至冰天雪地，在這冷冽的寒意，中您可以看到由巨大昆布組成的海洋森林與水中自由穿梭的海豹們，並結合聲光影視效果，還能尋訪北極熊的身影，猶如置身南北極之中。
+      </span>
+    );
+    setContentPhone(
+      <span>
+        極寒之地將引領您至冰天雪地，在這冷冽的寒意，中您可以看到由巨大昆布組成的海洋森林與水中自由穿梭的海豹們，並結合聲光影視效果，還能尋訪北極熊的身影，猶如置身南北極之中。
+      </span>
+    );
     document.querySelector("#area").value = "極寒之地";
   };
 
@@ -413,21 +421,41 @@ const Mix = () => {
       handleBlockClick(11);
     })();
 
-    setContent3(<span>還沒貼11</span>);
-    setContentPhone(<span>企鵝巡禮的內文</span>);
+    setContent3(
+      <span>
+        首先映入眼簾的是一片雪白，不同種類的企鵝在這邊與您相遇，您可看見他們在陸地上行走的可愛模樣和在水中嬉戲暢遊的模樣。此展區也模擬了極寒氣候，
+      </span>
+    );
+    setContentPhone(
+      <span>
+        首先映入眼簾的是一片雪白，不同種類的企鵝在這邊與您相遇，您可看見他們在陸地上行走的可愛模樣和在水中嬉戲暢遊的模樣。此展區也模擬了極寒氣候，
+      </span>
+    );
     document.querySelector("#area").value = "企鵝巡禮";
   };
 
   const areaTwelfth = () => {
-    setAreaImg3F("img/area/3-1coral.jpg");
+    setAreaImg3F("img/area/3-4deep.jpg");
+
+    setAreaImgPhone("img/area/3-4deep.jpg");
 
     (function () {
       handleButtonClick(12);
       handleBlockClick(12);
     })();
 
-    setContent3(<span>還沒貼12</span>);
-    setContentPhone(<span>深海搖籃的內文</span>);
+    setContent3(
+      <span>
+        踏足這片幽暗神秘的深淵，您將被黑暗籠罩，彷彿置身海洋世界的盡頭，
+        海洋是無數生命的搖籃，孕育出多樣的生物，在這裡您可以探索型態各異的深海生物。
+      </span>
+    );
+    setContentPhone(
+      <span>
+        踏足這片幽暗神秘的深淵，您將被黑暗籠罩，彷彿置身海洋世界的盡頭，
+        海洋是無數生命的搖籃，孕育出多樣的生物，在這裡您可以探索型態各異的深海生物。
+      </span>
+    );
     document.querySelector("#area").value = "深海搖籃";
   };
 
@@ -816,19 +844,33 @@ const Mix = () => {
     } else if (e.target.value === "極寒之地") {
       setAreaImgPhone("img/area/3-2seal.jpg");
 
-      setContentPhone(<span>極寒之地的內文</span>);
+      setContentPhone(
+        <span>
+          極寒之地將引領您至冰天雪地，在這冷冽的寒意，中您可以看到由巨大昆布組成的海洋森林與水中自由穿梭的海豹們，並結合聲光影視效果，還能尋訪北極熊的身影，猶如置身南北極之中。
+        </span>
+      );
       (function () {
         handleButtonClick(10);
       })();
     } else if (e.target.value === "企鵝巡禮") {
       setAreaImgPhone("img/area/3-3penguin.jpg");
 
-      setContentPhone(<span>企鵝巡禮的內文</span>);
+      setContentPhone(
+        <span>
+          首先映入眼簾的是一片雪白，不同種類的企鵝在這邊與您相遇，您可看見他們在陸地上行走的可愛模樣和在水中嬉戲暢遊的模樣。此展區也模擬了極寒氣候，
+        </span>
+      );
       (function () {
         handleButtonClick(11);
       })();
     } else if (e.target.value === "深海搖籃") {
-      setContentPhone(<span>深海搖籃的內文</span>);
+      setAreaImgPhone("img/area/3-4deep.jpg");
+      setContentPhone(
+        <span>
+          踏足這片幽暗神秘的深淵，您將被黑暗籠罩，彷彿置身海洋世界的盡頭，
+          海洋是無數生命的搖籃，孕育出多樣的生物，在這裡您可以探索型態各異的深海生物。
+        </span>
+      );
       (function () {
         handleButtonClick(12);
       })();
