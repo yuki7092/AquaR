@@ -439,6 +439,7 @@ const Mix = () => {
 
     setAreaImgPhone("img/area/3-4deep.jpg");
 
+
     (function () {
       handleButtonClick(12);
       handleBlockClick(12);
